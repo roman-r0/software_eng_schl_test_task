@@ -2,7 +2,7 @@ import requests
 import json
 import jwt
 from functools import wraps
-from datetime import datetime, timedelta
+from datetime import datetime
 from flask import abort, request
 from flask_restful import Resource
 from config import Config
@@ -26,7 +26,7 @@ def file_cached(file_name):
             if cache:
                 index = str(len(cache) - 1)
                 cashed_time = datetime.strptime(cache[index].get('time'), '%Y-%m-%dT%H:%M:%S.%f')
-                if cashed_time + timedelta(minutes=10) > datetime.now():
+                if cashed_time + Config.CACHED_TIME > datetime.now():
                     return cache[index].get('price')
             item = {
                 'time': datetime.now().isoformat(),
