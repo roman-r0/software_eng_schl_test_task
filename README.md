@@ -1,6 +1,7 @@
 # Software Engineering School Practical task
 
 ## Web API for bitcoin rate in UAH.
+[![Build Status](https://travis-ci.com/roman-r0/software_eng_schl_test_task.svg?branch=main)](https://travis-ci.com/roman-r0/software_eng_schl_test_task)
 
 For run use python 3.8. Install requirements using:
 ```

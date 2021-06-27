@@ -6,4 +6,4 @@ install:
 script:
   - coverage run -m --source=api unittest discover
 after_success:
-  - coverage report
+  - bash <(curl -s https://codecov.io/bash)
